@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,6 @@ Route::prefix('/v1/auth')->group(function(){
     });
 
 });
+
+Route::post('reset-password', [ResetPasswordController::class, "resetPassword"]);
+Route::post('change-password', [ResetPasswordController::class, "changePassword"]);
